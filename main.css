@@ -6,16 +6,21 @@
 body{
     background-color: #f2f2f2;
     font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
 }
 
 header{
-    max-width: 1440px;
     margin: 0 auto; 
     height: 100px;
     background-color: #FFFFFF;
     position: sticky;
     top:0;
     z-index: 1;
+    width: 100%;
 }
 
 .header__container{
@@ -31,7 +36,7 @@ header{
 .header__title{
     display: flex;
     color: #FF8F52;
-    padding-left: 120px;
+    padding-left: 5%;
 }
 
 .header__title::after{
@@ -42,8 +47,8 @@ header{
 }
 
 .header__nav{
-    padding-left: 290px;
-    padding-right: 394px; 
+    padding-left: 9%;
+    padding-right: 12%; 
 }
 
 a{
@@ -64,14 +69,15 @@ a{
 
 .header__icon{
     display: flex;
-    margin-right: 118px;
+    margin-right: 4%;
     gap: 19px;
 }
 
 
 main{
     max-width: 1440px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    margin-bottom: 440px; 
 }
 
 .hero__container{
@@ -203,15 +209,19 @@ main{
     width: 75px;
 }
 
-footer{
-    max-width: 1440px;
+footer{  
     margin: 0 auto; 
     background-color: #454545;
     height: 340px;
     color: #D9D9D9;
     display: flex;
     margin-top: 140px;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
+
 
 .footer__h1{
     padding-top: 55px;
@@ -229,7 +239,7 @@ footer{
 .footer__p{
     padding-left: 124px;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 15px;
     padding-top: 13px;
 }
 
@@ -262,5 +272,156 @@ footer{
 .footer__list__contact{
     list-style: none;
     padding-top: 28px;
-    line-height: 50px;
+    line-height: 40px;
+    display: block;
+}
+
+@media (max-width: 768px){
+    body{
+     width: 100%;
+    }
+    header{
+     width: 100%;
+    }
+    .header__title{
+       padding-left: 2%; 
+    }
+    .header__container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+    }
+    .header__nav{
+     padding-left:1%;
+     padding-right:2%;
+    }
+    .header__icon{
+     margin-right: 3%;
+   }
+   .hero__container{
+    display: block;
+   }
+   .hero__video{
+    margin-top: 0;
+    margin-left: 4%;
+   }
+   @keyframes slide {
+     0% { margin-left: 0; }
+     20% { margin-left: -384px; }
+     40% { margin-left: -768px; }
+     60% { margin-left: -1152px; }
+     80%{ margin-left: -1536px; }
+     100% { margin-left: 0; }
+   }
+   .slide img {
+     width: 384px;
+   }
+   .shop__content{
+     grid-template-columns:  repeat(2,minmax(400px,0fr));
+     margin-left: 20px;
+   }
+
+   footer{
+    width: 100%;
+   }
+
+   .footer__h1{
+     padding-left: 60px
+   }
+   .footer__p{
+     padding-left: 0;
+     font-size: 13px;
+     line-height: 15px
+   }
+   .footer__list__contact{
+     line-height: 35px;
+     padding-right: 20px;
+   }
+   .footer__coloun{
+     padding-left : 40px
+   }   
+}
+
+@media (max-width: 375px){
+    body{
+     width: 100%;
+    }
+    header{
+     width: 180%;
+     
+    }
+    .header__title{
+       padding-left: 2%; 
+    }
+    .header__container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+    }
+    .header__nav{
+     padding-left:1%;
+     padding-right:1%;
+    }
+    .header__icon{
+     margin-right: 9%;
+   }
+   .hero__container{
+    display: block;
+   }
+   .hero__video{
+    margin-top: 0;
+    margin-left: 4px;
+   }
+    
+
+   @keyframes slide {
+     0% { margin-left: 0; }
+     19% { margin-left: -625px; }
+     38% { margin-left: -1250px; }
+     57% { margin-left: -1875px; }
+     76%{ margin-left: -2500px; }
+     93%{ margin-left: -3125px; }
+     100% { margin-left: 0; }
+   }
+   .slide img {
+     width: 625px;
+   }
+   .shop__content{
+     grid-template-columns:  repeat(2,minmax(270px,0fr));
+   }
+
+   footer{
+    width: 200%;
+    justify-content:space-between
+   }
+
+   .footer__h1{
+     padding-left: 60px
+   }
+   .footer__p{
+     padding-left: 10px;
+     font-size: 18px;
+     line-height: 18px
+   }
+
+   .footer__contact{
+     margin-right: 100px;
+   }
+
+    .footer__list{
+        font-size: 15px;
+    }
+
+   .footer__list__contact{
+     line-height: 35px;
+     padding-right: 20px;
+    }
+
+    .footer__list__contact{
+        font-size: 15px;
+    }
+
+   .footer__coloun{
+     display: none;
+   }   
 }
