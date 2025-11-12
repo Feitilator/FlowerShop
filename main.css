@@ -244,7 +244,7 @@ footer{
 .footer__p{
     padding-left: 124px;
     font-size: 18px;
-    line-height: 15px;
+    line-height: 20px;
     padding-top: 13px;
 }
 
@@ -358,7 +358,7 @@ footer{
         margin-left: 100px;
     }
     video{
-        margin-left: 100px;
+        margin-left: 7%;
     }
     
 }
@@ -417,7 +417,7 @@ footer{
     }
 
     .hero__text{
-        padding-right: 0;
+        padding-right: 10px;
     }
 
     video{
@@ -437,6 +437,9 @@ footer{
         grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
     }
     
+    .shop__content{
+        margin-bottom: 400px;
+    }
 }
 
 @media (max-width : 620px){
@@ -482,7 +485,84 @@ footer{
     }
  
     .shop__content{
+        margin-bottom: 400px;
+    }
+    
+    video{
+        width: 350px;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width : 450px){
+    .shop__content{
+        margin-left: 18%;
+    }
+    
+    .shop__content{
         margin-bottom: 500px;
     }
 
+    video{
+        margin-left: 7%;
+    }
+    .footer__p{
+        padding-left: 11px;
+        line-height: 19px;
+    }
+    footer{
+        justify-content: start;
+    }
+}
+
+@media (max-width : 400px){
+    .slide img {
+        width: 300px;
+    }
+
+    /* Анимация */
+    @keyframes slide {
+        0% { margin-left: 0; }
+        19% { margin-left: -300px; }
+        38% { margin-left: -600px; }
+        57% { margin-left: -900px; }
+        76% { margin-left: -1200px; }
+        95%{ margin-left: -1500px;  }
+        100% { margin-left: 0; }
+    }
+
+    .slider {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    video{
+        width: 300px;
+        margin-left: 11%;
+        margin-bottom: 0;
+    }
+
+    .shop__content{
+        margin-left: 9%
+    }
+
+    .hero__text{
+        margin-left: 50px;
+    }
+
+    .shop__content{
+        margin-bottom: 800px;
+    }
+}
+
+@media (max-width : 350px){
+    video{
+       margin-left:3%; 
+    }
+    .shop__content{
+        margin-left: 5%;
+        grid-template-columns: 1fr;
+        margin-bottom: 900px;
+    }
+    
 }
