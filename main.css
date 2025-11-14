@@ -109,6 +109,12 @@ main{
     border: 0;
     width: 103px;
     height: 40px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.hero__button:hover{
+    filter: brightness(80%)
 }
 
 .hero__video{
@@ -212,6 +218,12 @@ video{
     border: 0px;
     height: 25px;
     width: 75px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.card__btn:hover{
+    filter: brightness(80%);
 }
 
 footer{  
@@ -244,7 +256,7 @@ footer{
 .footer__p{
     padding-left: 124px;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 19px;
     padding-top: 13px;
 }
 
