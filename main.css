@@ -73,11 +73,66 @@ a{
     gap: 19px;
 }
 
+.header__icon-cart{
+    cursor: pointer;
+    transition: filter .2s;
+}
+
+.header__icon-cart:hover{
+    filter: brightness(70%);
+}
 
 main{
     max-width: 1440px;
     margin: 0 auto;
     margin-bottom: 440px; 
+}
+
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.3);
+    display: grid;
+    align-items: center; 
+    justify-content: center;
+    overflow-y: auto; 
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;  
+}
+
+.modal__title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__button{
+    background:none;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal__button:active{
+    color: gray;
+}
+
+.modal__container{
+    width: 500px;
+    min-height: 200px;
+    padding: 35px;
+    z-index: 1;
+    background-color: white;
+    margin: 15px 10px;
+}
+
+.modal.open{
+    visibility:visible;
+    opacity: 1;
 }
 
 .hero__container{
@@ -525,6 +580,9 @@ footer{
     footer{
         justify-content: start;
     }
+    .modal__container{
+        width: 300px;
+    }
 }
 
 @media (max-width : 400px){
@@ -565,6 +623,10 @@ footer{
     .shop__content{
         margin-bottom: 800px;
     }
+
+    .modal__container{
+        width: 250px;
+    }
 }
 
 @media (max-width : 350px){
@@ -575,6 +637,10 @@ footer{
         margin-left: 5%;
         grid-template-columns: 1fr;
         margin-bottom: 900px;
+    }
+    
+    .modal__container{
+        width: 200px;
     }
     
 }
