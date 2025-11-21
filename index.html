@@ -26,7 +26,7 @@
             </nav>
             <div class="header__icon">
                 <a href="#"><img src="1.png" alt="profile"></a>
-                <a><img src="2.png" alt="cart" class="header__icon-cart" id="cart"></a>
+                <a><img src="2.png" alt="cart" class="header__icon-cart" id="cart-btn"></a>
             </div>
         </div>
     </header>
@@ -35,10 +35,31 @@
             <div class="modal__container">
                 <div class="modal__title">
                     <h1>Корзина</h1>
-                    <button class="modal__button" id="close_cart">X</button>            
+                    <button class="modal__button__close" id="close_cart">X</button>            
                 </div>
-                
-                
+                <ul class="modal__list" id="cart">
+                    <!-- <li class="modal__list-item">
+                            <img src="flower.png" class="modal__item-image">
+                            <div>
+                                <p class="modal__item-name">Цветок</p>
+                                <p class="modal__item-price">1488 тнг</p>
+                            </div>
+                        <button class="modal__item-button">X</button> 
+                    </li>
+                    <li class="modal__list-item">
+                            <img src="flower.png" class="modal__item-image">
+                            <div>
+                                <p class="modal__item-name">Цветок</p>
+                                <p class="modal__item-price">1488 тнг</p>
+                            </div>
+                        <button class="modal__item-button">X</button> 
+                    </li> -->
+                </ul>
+                <div class="modal__price">
+                    <p>ИТОГО</p>
+                    <p id="total-price">14 000 тнг</p>
+                </div>
+                <button class="modal__button__buy">Оформить заказ</button>
             </div>
         </div>
         <section class="hero">
@@ -68,13 +89,13 @@
         <section class="shop">
             <div class="shop__container">
                 <h1 class="shop__h1">Aссортимент:</h1>
-                <div class="shop__content">
+                <div class="shop__content" id="product-list">
                 <article class="card">
                     <img src="flower1.png" alt="Цветы">
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 8234</div>
+                            <div class="card__caprice">8234 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -84,7 +105,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 14792</div>
+                            <div class="card__caprice">14792 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -94,7 +115,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 5981</div>
+                            <div class="card__caprice">5981 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -104,7 +125,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 13207</div>
+                            <div class="card__caprice">13207 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -114,7 +135,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 10455</div>
+                            <div class="card__caprice">10455 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -124,7 +145,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 7630</div>
+                            <div class="card__caprice">7630 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -134,7 +155,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 11984</div>
+                            <div class="card__caprice">11984 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -144,7 +165,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 5009</div>
+                            <div class="card__caprice">5009 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -154,7 +175,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 14268</div>
+                            <div class="card__caprice">14268 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -164,7 +185,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 6782</div>
+                            <div class="card__caprice">6782 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -174,7 +195,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 9351</div>
+                            <div class="card__caprice">9351 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
@@ -184,7 +205,7 @@
                     <div class="card__body">
                         <div class="card__title">Цветок</div>
                         <div class="card__price-row">
-                            <div class="card__caprice">₸ 12840</div>
+                            <div class="card__caprice">12840 ₸</div>
                             <button class="card__btn">В корзину</button>
                         </div>
                     </div>
