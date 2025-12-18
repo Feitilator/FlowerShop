@@ -22,10 +22,12 @@ productList.addEventListener('click',(event) => {
         const imageCard = product.querySelector('img')
         const titleCard = product.querySelector('.card__title')
         const priceCard = product.querySelector('.card__caprice')
+        const idCard = product.querySelector('.card__title')
 
         productInfo.model = titleCard.textContent
         productInfo.price = priceCard.textContent
         productInfo.photo = imageCard.src
+        productInfo.id = idCard.getAttribute('id');
 
         renderProductInCart()
     }
@@ -39,7 +41,12 @@ function renderProductInCart(){
     li.innerHTML=`
     <img src="${productInfo.photo}" class="modal__item-image">
         <div>
-            <p class="modal__item-name">${productInfo.model}</p>
+            <p class="modal__item-name" id="${productInfo.id}">${productInfo.model}</p>
+            <div class="modal__value">
+                <button class="modal__button-minus">-</button>
+                <p class="modal__item-value">0</p>
+                <button class="modal__button-minus">+</button>  
+            </div>
             <p class="modal__item-price" data-price="${productInfo.price}">${productInfo.price}</p>
         </div>
         <button class="modal__item-button">X</button> 

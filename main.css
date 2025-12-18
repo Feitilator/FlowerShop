@@ -117,19 +117,38 @@ main{
 
 .modal__list-item{
     padding-bottom: 25px;
-    display: flex;   
-    align-items: center;
+    display: flex;
     justify-content: space-between;
     font-size: 20px;
     font-weight: 400;
 }
 
 .modal__item-name{
-    margin-bottom: 35px;
+    width: 200px;
+    padding-right: 90px;
+    padding-bottom: 12px;
+    word-break: break-all;
+}
+
+.modal__value{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 12px;
+}
+
+.modal__button-minus,.modal__button-minus{
+    background: none;
+    border: 0;
+    font-size: 20px;
+}
+
+.modal__button-minus:active,.modal__button-minus:active{
+    color: gray;
 }
 
 .modal__item-image{
-    width: 100px;
+    width: 121px;
+    height: 99px;
 }
 
 .modal__item-button{
@@ -137,8 +156,8 @@ main{
     border: 0;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 250px;
     transition: color .2s;
+    padding-bottom: 70px;
 }
 
 .modal__item-button:active{
