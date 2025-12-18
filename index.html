@@ -19,9 +19,9 @@
             <nav class="header__nav">
                 <ul class="header__list">
                     <a href="#"><li class="header__list-item">Home</li></a>
-                    <a href="#"><li class="header__list-item">Shop</li></a>
-                    <a href="#"><li class="header__list-item">Blog</li></a>
-                    <a href="#"><li class="header__list-item">About</li></a>
+                    <a href="#blog"><li class="header__list-item">Blog</li></a>
+                    <a href="#shop"><li class="header__list-item">Shop</li></a>
+                    <a href="#about"><li class="header__list-item">About</li></a>
                 </ul> 
             </nav>
             <div class="header__icon">
@@ -57,7 +57,7 @@
                 </ul>
                 <div class="modal__price">
                     <p>ИТОГО</p>
-                    <p id="total-price">14 000 тнг</p>
+                    <p id="total-price">0 ₸</p>
                 </div>
                 <button class="modal__button__buy">Оформить заказ</button>
             </div>
@@ -67,9 +67,9 @@
                 <div class="hero__text">
                     <h1 class="hero__h1">Flowers, 🌻<br>what the world <br>needs </h1>
                     <p class="hero__p">Browse between hounders of flowers</p>
-                    <button class="hero__button">Browse</button>
+                    <a href="https://www.youtube.com/watch?v=i810CxN5Q6Q" target="_blank"><button class="hero__button" >Browse</button></a>
                 </div>
-                <div class="hero__video">
+                <div class="hero__video" id="blog">
                     <video src="video1.mp4"  autoplay loop muted playsinline></video>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </section>
-        <section class="shop">
+        <section class="shop" id="shop">
             <div class="shop__container">
                 <h1 class="shop__h1">Aссортимент:</h1>
                 <div class="shop__content" id="product-list">
@@ -214,7 +214,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="about">
         <div class="footer__coloun1">
             <h1 class="footer__h1">Flower</h1>
             <p class="footer__p">
