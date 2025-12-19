@@ -137,13 +137,13 @@ main{
     padding-bottom: 12px;
 }
 
-.modal__button-minus,.modal__button-minus{
+.modal__button-plus,.modal__button-minus{
     background: none;
     border: 0;
     font-size: 20px;
 }
 
-.modal__button-minus:active,.modal__button-minus:active{
+.modal__button-plus:active,.modal__button-minus:active{
     color: gray;
 }
 
@@ -158,7 +158,7 @@ main{
     font-size: 20px;
     cursor: pointer;
     transition: color .2s;
-    padding-bottom: 70px;
+    height: 20px;
 }
 
 .modal__item-button:active{

@@ -4,6 +4,9 @@ const closeBtn = document.getElementById('close_cart')
 const cartList = document.getElementById('cart')
 const productList = document.getElementById('product-list')
 const buyProductBtn = document.querySelector('.modal__button__buy')
+const plusBtn = document.querySelector('.modal__button-plus')
+const minusBtn = document.querySelector('.modal__button-minus')
+const valueProduct = document.querySelector('.modal__item-value')
 
 
 const productInfo = {}
@@ -48,8 +51,8 @@ function renderProductInCart(){
             <p class="modal__item-name" id="${productInfo.id}">${productInfo.model}</p>
             <div class="modal__value">
                 <button class="modal__button-minus">-</button>
-                <p class="modal__item-value">0</p>
-                <button class="modal__button-minus">+</button>  
+                <p class="modal__item-value">1</p>
+                <button class="modal__button-plus">+</button>  
             </div>
             <p class="modal__item-price" data-price="${productInfo.price}">${productInfo.price}</p>
         </div>
@@ -82,11 +85,13 @@ function calculateTotalCartValue(){
             
     }else{
         totalPrice.innerHTML = `0 ₸`
-        // cartList.innerHTML = `<h2>Корзина Пуста</h2>`
+        
     }
+
 }
 
 buyProductBtn.addEventListener('click', () =>{
     cartList.innerHTML = ''
     calculateTotalCartValue()
 })
+
