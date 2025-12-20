@@ -4,10 +4,6 @@ const closeBtn = document.getElementById('close_cart')
 const cartList = document.getElementById('cart')
 const productList = document.getElementById('product-list')
 const buyProductBtn = document.querySelector('.modal__button__buy')
-const plusBtn = document.querySelector('.modal__button-plus')
-const minusBtn = document.querySelector('.modal__button-minus')
-const valueProduct = document.querySelector('.modal__item-value')
-
 
 const productInfo = {}
 
@@ -36,7 +32,20 @@ productList.addEventListener('click',(event) => {
         productInfo.photo = imageCard.src
         productInfo.id = idCard.getAttribute('id');
 
-        renderProductInCart()
+        const productInCart = cartList.querySelector(`#${productInfo.id}`)
+
+        if(productInCart){
+            const currentItemsProduct = productInCart.querySelector('.modal__item-value')
+            const minusBtn = productInCart.querySelector('.modal__button-minus')
+            const priceProduct = productInCart.querySelector('.modal__item-price')
+            currentItemsProduct.textContent = Number(currentItemsProduct.textContent) + 1
+            minusBtn.disabled = false
+            let totalPrice = Number(currentItemsProduct.textContent) * Number(priceProduct.dataset.price.slice(0,-1))
+            priceProduct.textContent = `${totalPrice} ₸`
+            calculateTotalCartValue()
+        }else{
+            renderProductInCart()
+        }      
     }
 })
 
@@ -44,13 +53,14 @@ productList.addEventListener('click',(event) => {
 function renderProductInCart(){
     const li = document.createElement('li')
     li.classList.add('modal__list-item')
+    li.id = productInfo.id
 
     li.innerHTML=`
     <img src="${productInfo.photo}" class="modal__item-image">
         <div>
-            <p class="modal__item-name" id="${productInfo.id}">${productInfo.model}</p>
+            <p class="modal__item-name">${productInfo.model}</p>
             <div class="modal__value">
-                <button class="modal__button-minus">-</button>
+                <button class="modal__button-minus" disabled>-</button>
                 <p class="modal__item-value">1</p>
                 <button class="modal__button-plus">+</button>  
             </div>
@@ -58,6 +68,7 @@ function renderProductInCart(){
         </div>
         <button class="modal__item-button">X</button> 
     `
+
     cartList.append(li)
     calculateTotalCartValue()
 }
@@ -90,8 +101,46 @@ function calculateTotalCartValue(){
 
 }
 
+
 buyProductBtn.addEventListener('click', () =>{
     cartList.innerHTML = ''
     calculateTotalCartValue()
 })
 
+cartList.addEventListener('click', (event) => {
+    if(event.target.classList.contains('modal__button-plus')){
+        const cartItem = event.target.closest('.modal__list-item')
+        const valueProduct = cartItem.querySelector('.modal__item-value')
+        const priceProduct = cartItem.querySelector('.modal__item-price')
+        const minusBtn = cartItem.querySelector('.modal__button-minus')
+        let value = Number(valueProduct.textContent)
+        let price = Number(priceProduct.dataset.price.slice(0,-1))
+        value += 1
+        let totalprice = value * price
+        if(value <= 1){
+            minusBtn.disabled = true
+        }else{
+            minusBtn.disabled = false
+        } 
+        valueProduct.innerHTML = `${value}`
+        priceProduct.innerHTML = `${totalprice} ₸`
+        calculateTotalCartValue()
+    }else if(event.target.classList.contains('modal__button-minus')){
+        const cartItem = event.target.closest('.modal__list-item')
+        const valueProduct = cartItem.querySelector('.modal__item-value')
+        const priceProduct = cartItem.querySelector('.modal__item-price')
+        const minusBtn = cartItem.querySelector('.modal__button-minus')
+        let value = Number(valueProduct.textContent)
+        let price = Number(priceProduct.dataset.price.slice(0,-1))
+        value -= 1
+        let totalprice = value * price
+        if(value <= 1){
+            minusBtn.disabled = true
+        }else{
+            minusBtn.disabled = false
+        }
+        valueProduct.innerHTML = `${value}`
+        priceProduct.innerHTML = `${totalprice} ₸`
+        calculateTotalCartValue()
+    }
+})
